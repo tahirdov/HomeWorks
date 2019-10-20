@@ -32,6 +32,7 @@ public class Shooting {
         System.out.println("Enter a bar number between 1 - 5: ");
         int inputBar = scanner.nextInt();
         while (inputBar > 5 || inputBar < 1) {
+
             System.out.println("Enter a bar number between 1 - 5: ");
             inputBar = scanner.nextInt();
         }
