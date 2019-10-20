@@ -1,8 +1,7 @@
 package Homework3;
 
-import java.awt.*;
 import java.util.Scanner;
-import java.util.Locale;
+
 
 public class WeekPlanner {
     public static void main(String[] args) {
