@@ -29,6 +29,10 @@ public class Human {
         this.iq = iq;
     }
 
+    public Human() {
+
+    }
+
     public String getName() {
         return name;
     }

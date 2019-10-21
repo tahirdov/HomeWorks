@@ -44,14 +44,12 @@ public class Human {
 
 
     void greetPet() {
-        if (pet.nickname == null) System.out.println( name + " has no pet." );
-        else
-            System.out.println( "Hello " + pet.nickname + "!" );
+        System.out.println( "Hello " + pet.getNickname() + "!" );
     }
 
     void describePet() {
-        System.out.print( "I have a " + pet.species + ", he is " + pet.age + " years old, he is " );
-        if (pet.trickLevel < 50)
+        System.out.print( "I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is " );
+        if (pet.getTrickLevel() < 50)
             System.out.println( "almost not sly." );
         else System.out.println( "very sly." );
     }
@@ -61,6 +59,4 @@ public class Human {
         return String.format( "Human{name = %s, surname=%s, year = %d, iq = %d, father = %s, mother = %s, pet = %s",
                 name, surname, year, iq, father, mother, pet );
     }
-
-
 }
