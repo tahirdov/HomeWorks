@@ -27,14 +27,12 @@ public class NumberGame {
                 System.out.print("Guess the number again: ");
                 guess = scanner.nextInt();
                 scanner.nextLine();
-            }
-            else if (randomNumber > guess) {
+            } else if (randomNumber > guess) {
                 System.out.println("Your number is too small. Please, try again.");
                 System.out.print("Guess the number again: ");
                 guess = scanner.nextInt();
                 scanner.nextLine();
-            }
-            else if (randomNumber < guess) {
+            } else if (randomNumber < guess) {
                 System.out.println("Your number is too big. Please, try again.");
                 System.out.print("Guess the number again: ");
                 guess = scanner.nextInt();
@@ -47,10 +45,9 @@ public class NumberGame {
         }
 
 
-
     }
 
-    public static int getRandom (int[] array) {
+    public static int getRandom(int[] array) {
         return new Random().nextInt(array.length);
     }
 
