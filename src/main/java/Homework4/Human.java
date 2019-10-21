@@ -4,33 +4,33 @@ public class Human {
 
     String name;
     String surname;
-    int dateOfYear;
+    int year;
     int iq;
     Human father;
     Human mother;
     String[][] schedule;
     Pet pet;
 
-    Human(String name, String surname, int dateOfYear) {
+    Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
-        this.dateOfYear = dateOfYear;
+        this.year = year;
     }
 
-    Human(String name, String surname, int dateOfYear, int iq, Human father, Human mother) {
+    Human(String name, String surname, int year, int iq, Human father, Human mother) {
         this.name = name;
         this.surname = surname;
-        this.dateOfYear = dateOfYear;
+        this.year = year;
         this.iq = iq;
         this.father = father;
         this.mother = mother;
     }
 
-    Human(String name, String surname, int dateOfYear, int iq, Human father,
+    Human(String name, String surname, int year, int iq, Human father,
           Human mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
-        this.dateOfYear = dateOfYear;
+        this.year = year;
         this.iq = iq;
         this.father = father;
         this.mother = mother;
@@ -59,7 +59,7 @@ public class Human {
 
     public String toString() {
         return String.format( "Human{name = %s, surname=%s, year = %d, iq = %d, father = %s, mother = %s, pet = %s",
-                name, surname, dateOfYear, iq, father, mother, pet );
+                name, surname, year, iq, father, mother, pet );
     }
 
 
