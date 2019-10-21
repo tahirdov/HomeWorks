@@ -1,25 +1,23 @@
 package Homework4;
 
-import java.util.Arrays;
-
-public class Humans {
+public class Human {
 
     String name;
     String surname;
     int dateOfYear;
     int iq;
-    Humans father;
-    Humans mother;
+    Human father;
+    Human mother;
     String[][] schedule;
-    Pets pet;
+    Pet pet;
 
-    public Humans(String name, String surname, int dateOfYear) {
+    Human(String name, String surname, int dateOfYear) {
         this.name = name;
         this.surname = surname;
         this.dateOfYear = dateOfYear;
     }
 
-    public Humans(String name, String surname, int dateOfYear, int iq, Humans father, Humans mother) {
+    Human(String name, String surname, int dateOfYear, int iq, Human father, Human mother) {
         this.name = name;
         this.surname = surname;
         this.dateOfYear = dateOfYear;
@@ -28,8 +26,8 @@ public class Humans {
         this.mother = mother;
     }
 
-    public Humans(String name, String surname, int dateOfYear, int iq, Humans father,
-                  Humans mother, String[][] schedule, Pets pet) {
+    Human(String name, String surname, int dateOfYear, int iq, Human father,
+          Human mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.dateOfYear = dateOfYear;
@@ -40,18 +38,18 @@ public class Humans {
         this.pet = pet;
     }
 
-    public Humans() {
+    public Human() {
 
     }
 
 
-    public void greetPet() {
+    void greetPet() {
         if (pet.nickname == null) System.out.println( name + " has no pet." );
         else
             System.out.println( "Hello " + pet.nickname + "!" );
     }
 
-    public void describePet() {
+    void describePet() {
         System.out.print( "I have a " + pet.species + ", he is " + pet.age + " years old, he is " );
         if (pet.trickLevel < 50)
             System.out.println( "almost not sly." );
