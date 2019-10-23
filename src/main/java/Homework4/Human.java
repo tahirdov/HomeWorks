@@ -1,15 +1,17 @@
 package Homework4;
 
+import java.util.Arrays;
+
 public class Human {
 
-    String name;
-    String surname;
-    int year;
-    int iq;
-    Human father;
-    Human mother;
-    String[][] schedule;
     Pet pet;
+    private String name;
+    private String surname;
+    private int year;
+    private int iq;
+    private String father;
+    private String mother;
+    private String[][] schedule;
 
     Human(String name, String surname, int year) {
         this.name = name;
@@ -17,7 +19,7 @@ public class Human {
         this.year = year;
     }
 
-    Human(String name, String surname, int year, int iq, Human father, Human mother) {
+    Human(String name, String surname, int year, int iq, String father, String mother) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -26,8 +28,8 @@ public class Human {
         this.mother = mother;
     }
 
-    Human(String name, String surname, int year, int iq, Human father,
-          Human mother, String[][] schedule, Pet pet) {
+    Human(String name, String surname, int year, int iq, String father,
+          String mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -56,7 +58,7 @@ public class Human {
 
 
     public String toString() {
-        return String.format( "Human{name = %s, surname=%s, year = %d, iq = %d, father = %s, mother = %s, pet = %s",
-                name, surname, year, iq, father, mother, pet );
+        return String.format( "Human{name = %s, surname=%s, year = %d, iq = %d, schedule = %s",
+                name, surname, year, iq, Arrays.toString( schedule ) );
     }
 }

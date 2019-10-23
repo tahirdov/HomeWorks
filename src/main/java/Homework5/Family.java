@@ -3,15 +3,21 @@ package Homework5;
 import java.util.Arrays;
 
 public class Family {
-    private Human mother;
-    private Human father;
-    private Human[] children;
+
+
+    private String mother;
+    private String father;
+    private Human mom;
+    private Human dad;
+    private Child[] children;
     private Pet pet;
     private Family family;
+    private Human human;
+    private Child child;
 
-    public Family(Human father, Human mother) {
-        this.father = father;
-        this.mother = mother;
+    private Family(Human dad, Human mom) {
+        this.dad = dad;
+        this.mom = mom;
     }
 
     public static void main(String[] args) {
@@ -20,40 +26,97 @@ public class Family {
         Pet pet2 = new Pet( "cat", "Marshmallow", 2, 72,
                 new String[]{"Chilling on sofa", "Scratching table legs"} );
 
-        Human mother = new Human( "Esmeralda", "D'atre", 1993, 92 );
-        Human father = new Human( "Merloin", "D'Atre", 1991, 98 );
+        Human mother = new Human( "Esmeralda", "Tolkien", 1993, 92,
+                "Rand Smith", "Egwene Smith",
+                new String[][]{{"Monday"}, {"Go to cafe"}}, pet2 );
+        Human father = new Human( "Merloin", "Tolkien", 1991, 98,
+                "Lan Tolkien", "Moiraine Tolkien",
+                new String[][]{{"Sunday"}, {"Play with children"}}, pet1 );
 
-        Human child1 = new Human( "Alexandre", "D'Atre", 2016, 75, father, mother,
+        Child child1 = new Child( "Alexandre", "Tolkien", 2016, 75, father, mother,
                 new String[][]{{"Everyday"}, {"Playing with pets"}}, pet1 );
-        Human child2 = new Human( "Lily", "D'Atre", 2018, 62, father, mother,
+        Child child2 = new Child( "Lily", "Tolkien", 2018, 62, father, mother,
                 new String[][]{{"Everyday"}, {"Playing with pets"}}, pet2 );
 
-        Human[] children = {child1, child2};
+        Child[] children = {child1, child2};
 
         Family family = new Family( father, mother );
+        family.setChildren( children );
+
+//        deleteChild(child1, children);
+        returnFamilyCount( family, "Tolkien" );
+
     }
 
-    public Human getMother() {
+    public static Human[] addChild(Human newChild, Human[] array) {
+        newChild = new Human();
+        Human[] newChildren = new Human[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
+            newChildren[i] = array[i];
+        }
+        newChildren[array.length + 1] = newChild;
+
+        return newChildren;
+
+    }
+
+    public static Child[] deleteChild(Child child, Child[] array) {
+        int length = 0;
+        Child[] newChildren = new Child[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (!child.equals( array[i] )) {
+                newChildren[length++] = array[i];
+            }
+        }
+        System.out.printf( "%s has left the family.", child.getName() );
+        return Arrays.copyOf( newChildren, length );
+
+    }
+
+    private static int countFamily(Family family, String surname) {
+        int count = 0;
+        for (int i = 0; i < family.getChildren().length + 2; i++) {
+            if (surname.equals( family.getChild().getSurname() ) || surname.equals( family.getHuman().getSurname() ))
+                count++;
+        }
+        return count;
+    }
+
+    private static String returnFamilyCount(Family family, String surname) {
+        return "There are " + countFamily( family, surname ) +
+                "members in family " + surname;
+    }
+
+    public boolean equals(Child one) {
+        return super.equals( one );
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    public String getMother() {
         return mother;
     }
 
-    public void setMother(Human mother) {
+    public void setMother(String mother) {
         this.mother = mother;
     }
 
-    public Human getFather() {
+    public String getFather() {
         return father;
     }
 
-    public void setFather(Human father) {
+    public void setFather(String father) {
         this.father = father;
     }
 
-    public Human[] getChildren() {
+    private Child[] getChildren() {
         return children;
     }
 
-    public void setChildren(Human[] children) {
+    private void setChildren(Child[] children) {
         this.children = children;
     }
 
@@ -65,9 +128,43 @@ public class Family {
         this.pet = pet;
     }
 
-    public String toString() {
-        return "Mother: " + mother.getName() + mother.getSurname() +
-                "\nFather: " + father.getName() + father.getSurname() +
-                "\nChildren: " + Arrays.toString( children );
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
+    private Human getHuman() {
+        return human;
+    }
+
+    public void setHuman(Human human) {
+        this.human = human;
+    }
+
+    public Human getMom() {
+        return mom;
+    }
+
+    public void setMom(Human mom) {
+        this.mom = mom;
+    }
+
+    public Human getDad() {
+        return dad;
+    }
+
+    public void setDad(Human dad) {
+        this.dad = dad;
+    }
+
+    public Child getChild() {
+        return child;
+    }
+
+    public void setChild(Child child) {
+        this.child = child;
     }
 }

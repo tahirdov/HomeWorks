@@ -1,36 +1,27 @@
 package Homework5;
 
-public class Human {
+import java.util.Arrays;
+
+public class Child {
+
     private String name;
     private String surname;
-    private int dateOfYear;
+    private int year;
     private int iq;
-    private String father;
-    private String mother;
+    private Human father;
+    private Human mother;
     private String[][] schedule;
     private Pet pet;
 
-    public Human(String name, String surname, int dateOfYear, int iq, String father,
-                 String mother, String[][] schedule, Pet pet) {
+    public Child(String name, String surname, int year, int iq, Human father, Human mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
-        this.dateOfYear = dateOfYear;
+        this.year = year;
         this.iq = iq;
         this.father = father;
         this.mother = mother;
         this.schedule = schedule;
         this.pet = pet;
-    }
-
-    public Human(String name, String surname, int dateOfYear, int iq) {
-        this.name = name;
-        this.surname = surname;
-        this.dateOfYear = dateOfYear;
-        this.iq = iq;
-    }
-
-    public Human() {
-
     }
 
     public String getName() {
@@ -49,12 +40,12 @@ public class Human {
         this.surname = surname;
     }
 
-    public int getDateOfYear() {
-        return dateOfYear;
+    public int getYear() {
+        return year;
     }
 
-    public void setDateOfYear(int dateOfYear) {
-        this.dateOfYear = dateOfYear;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public int getIq() {
@@ -65,19 +56,19 @@ public class Human {
         this.iq = iq;
     }
 
-    public String getFather() {
+    public Human getFather() {
         return father;
     }
 
-    public void setFather(String father) {
+    public void setFather(Human father) {
         this.father = father;
     }
 
-    public String getMother() {
+    public Human getMother() {
         return mother;
     }
 
-    public void setMother(String mother) {
+    public void setMother(Human mother) {
         this.mother = mother;
     }
 
@@ -96,4 +87,10 @@ public class Human {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+
+    public String toString() {
+        return String.format( "Human{name = %s, surname=%s, year = %d, iq = %d, schedule = %s",
+                name, surname, year, iq, Arrays.toString( schedule ) );
+    }
+
 }
