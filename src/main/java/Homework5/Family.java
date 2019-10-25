@@ -43,8 +43,7 @@ public class Family {
         Family family = new Family( father, mother );
         family.setChildren( children );
 
-//        deleteChild(child1, children);
-        returnFamilyCount( family, "Tolkien" );
+        deleteChild(child1, children);
 
     }
 
