@@ -50,26 +50,27 @@ public class Family {
         children.add( child2 );
 
         Family Datre = new Family( father, mother );
-        Datre.familyCount( Datre, children );
+        Datre.setChildren( children );
+        Datre.familyCount( Datre);
 
         children.add( new Human( "Milena", "D'Atre", 2019 ) );
         System.out.println( "After Milena:" );
-        Datre.familyCount( Datre, children );
+        Datre.familyCount( Datre);
 
         System.out.println( "Years passed..." );
         Datre.deleteChild( child1, children );
-        Datre.familyCount( Datre, children );
+        Datre.familyCount( Datre);
         Datre.finalize();
 
     }
 
 
-    private void familyCount(Family family, ArrayList<Human> children) {
-        System.out.printf( "There are %d members in family %s.\n", count( children ), family.getFather().getSurname() );
+    private void familyCount(Family family) {
+        System.out.printf( "There are %d members in family %s.\n", count( family), family.getFather().getSurname() );
     }
 
-    private int count(ArrayList<Human> children) {
-        return 2 + children.size();
+    private int count(Family family) {
+        return 2 + family.getChildren().size();
     }
 
     private void deleteChild(Human child, ArrayList<Human> children) {
@@ -100,11 +101,11 @@ public class Family {
         this.father = father;
     }
 
-    public ArrayList<Human> getChildren() {
+    private ArrayList<Human> getChildren() {
         return children;
     }
 
-    public void setChildren(ArrayList<Human> children) {
+    private void setChildren(ArrayList<Human> children) {
         this.children = children;
     }
 
