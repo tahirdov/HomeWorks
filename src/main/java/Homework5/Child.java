@@ -13,7 +13,7 @@ public class Child {
     private String[][] schedule;
     private Pet pet;
 
-    public Child(String name, String surname, int year, int iq, Human father, Human mother, String[][] schedule, Pet pet) {
+    Child(String name, String surname, int year, int iq, Human father, Human mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -24,7 +24,7 @@ public class Child {
         this.pet = pet;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -32,7 +32,7 @@ public class Child {
         this.name = name;
     }
 
-    public String getSurname() {
+    String getSurname() {
         return surname;
     }
 

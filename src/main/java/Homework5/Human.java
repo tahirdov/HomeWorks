@@ -10,8 +10,8 @@ public class Human {
     private String[][] schedule;
     private Pet pet;
 
-    public Human(String name, String surname, int dateOfYear, int iq, String father,
-                 String mother, String[][] schedule, Pet pet) {
+    Human(String name, String surname, int dateOfYear, int iq, String father,
+          String mother, String[][] schedule, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.dateOfYear = dateOfYear;
@@ -29,7 +29,7 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human() {
+    Human() {
 
     }
 
@@ -41,7 +41,7 @@ public class Human {
         this.name = name;
     }
 
-    public String getSurname() {
+    String getSurname() {
         return surname;
     }
 
