@@ -14,10 +14,6 @@ public class RoboCat extends Pet {
                 getSpecies(), getNickname(), getAge(), getTrickLevel(), Arrays.toString( getHabits() ) );
     }
 
-    @Override
-    public void respond() {
-        System.out.println( "**(robotic meow voice)**" );
-    }
 
 
 }

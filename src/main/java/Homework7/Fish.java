@@ -14,9 +14,4 @@ public class Fish extends Pet {
                 getSpecies(), getNickname(), getAge() );
     }
 
-    @Override
-    public void respond() {
-        System.out.println( "**gulp gulp**" );
-    }
-
 }

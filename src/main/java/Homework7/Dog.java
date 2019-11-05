@@ -2,7 +2,7 @@ package Homework7;
 
 import java.util.Arrays;
 
-public class Dog extends Pet implements fouling {
+public class Dog extends Pet implements PetBehaviour {
     Dog(Species species, String nickname, int age, int trickLevel, String[] habits) {
         super( species, nickname, age, trickLevel, habits );
     }
