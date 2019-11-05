@@ -2,7 +2,7 @@ package Homework7;
 
 import java.util.Arrays;
 
-public class DomesticCat extends Pet {
+public class DomesticCat extends Pet implements fouling {
     DomesticCat(Species species, String nickname, int age, int trickLevel, String[] habits) {
         super( species, nickname, age, trickLevel, habits );
     }
@@ -12,5 +12,15 @@ public class DomesticCat extends Pet {
 
         System.out.printf( "Species: %s Name: %s Age: %d Trick level: %d, Habits: %s\n",
                 getSpecies(), getNickname(), getAge(), getTrickLevel(), Arrays.toString( getHabits() ) );
+    }
+
+    @Override
+    public void foul() {
+        System.out.println( "I know how to cover it!" );
+    }
+
+    @Override
+    public void respond() {
+        System.out.println( "**MEOW**" );
     }
 }

@@ -13,4 +13,10 @@ public class Fish extends Pet {
         System.out.printf( "Species: %s Name: %s Age: %d\n",
                 getSpecies(), getNickname(), getAge() );
     }
+
+    @Override
+    public void respond() {
+        System.out.println( "**gulp gulp**" );
+    }
+
 }

@@ -26,6 +26,8 @@ public abstract class Pet {
         System.out.println( "I am eating *YUMMY*" );
     }
 
+    public abstract void respond();
+
     public abstract void describe();
 
     Species getSpecies() {
