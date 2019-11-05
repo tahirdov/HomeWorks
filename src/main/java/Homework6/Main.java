@@ -22,9 +22,9 @@ public class Main {
         Human grandpa2 = new Human( "Gareth", "Sanche", 1971 );
 
         Human father = new Human( "Merloin", "D'Atre", 1993, 98, grandpa1, grandma1,
-                new String[][]{{String.valueOf( day1 )}, {"Reading book for family"}}, pet1 );
+                new String[][]{{day1.name()}, {"Reading book for family"}}, pet1 );
         Human mother = new Human( "Esmeralda", "D'Atre", 1995, 88, grandpa2, grandma2,
-                new String[][]{{String.valueOf( day2 )}, {"Singing for family"}}, pet2 );
+                new String[][]{{day2.name()}, {"Singing for family"}}, pet2 );
 
         Human child1 = new Human( "Alexandre", "D'atre", 2018, 75, father, mother,
                 new String[][]{{"Everyday"}, {"Playing around"}}, pet1 );
