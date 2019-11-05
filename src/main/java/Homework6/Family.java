@@ -1,12 +1,12 @@
 package Homework6;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Family {
 
     private Human mother;
     private Human father;
-    private ArrayList<Human> children;
+    private Human[] children;
     private Pet pet;
     private Family family;
     private Human child;
@@ -33,11 +33,11 @@ public class Family {
         this.father = father;
     }
 
-    ArrayList<Human> getChildren() {
+    Human[] getChildren() {
         return children;
     }
 
-    void setChildren(ArrayList<Human> children) {
+    void setChildren(Human[] children) {
         this.children = children;
     }
 
@@ -66,23 +66,32 @@ public class Family {
     }
 
 
-    void familyCount(Family family) {
-        System.out.printf( "There are %d members in family %s.\n", count( family ), family.getFather().getSurname() );
+
+
+    public static Human[] addChild(Human newChild, Human[] array) {
+        newChild = new Human();
+        Human[] newChildren = new Human[array.length + 1];
+        System.arraycopy( array, 0, newChildren, 0, array.length );
+        newChildren[array.length + 1] = newChild;
+
+        return newChildren;
+
     }
 
-    private int count(Family family) {
-        return 2 + family.getChildren().size();
+    static Human[] deleteChild(Human child, Human[] array) {
+        int length = 0;
+        Human[] newChildren = new Human[array.length];
+        for (Human value : array) {
+            if (!child.equals( value )) {
+                newChildren[length++] = value;
+            }
+        }
+        System.out.printf( "%s has left the family.", child.getName() );
+        return Arrays.copyOf( newChildren, array.length - 1 );
     }
 
-    void deleteChild(Human child, ArrayList<Human> children) {
-        System.out.println( child.getName() + " has left the family." );
-        children.remove( child );
-    }
-
-    public ArrayList<Human> deleteChild(int index, ArrayList<Human> children) {
-        System.out.println( children.get( index ).getName() + " has left the family." );
-        children.remove( index );
-        return children;
+    static int countFamily(Family family) {
+        return 2 + family.getChildren().length;
     }
 
     @Override

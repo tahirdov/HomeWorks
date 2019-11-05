@@ -1,6 +1,5 @@
 package Homework6;
 
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws Throwable {
@@ -31,22 +30,22 @@ public class Main {
                 new String[][]{{"Everyday"}, {"Playing around"}}, pet1 );
         Human child2 = new Human( "Alexandra", "D'atre", 2016, 75, father, mother,
                 new String[][]{{"Everyday"}, {"Playing around"}}, pet2 );
+        Human child3 = new Human( "Milena", "D'atre", 2019, 75, father, mother,
+                new String[][]{{"Everyday"}, {"Playing around"}}, pet2 );
 
-        ArrayList<Human> children = new ArrayList<Human>();
-        children.add( child1 );
-        children.add( child2 );
+        Human[] children = {child1, child2};
 
         Family Datre = new Family( father, mother );
         Datre.setChildren( children );
-        Datre.familyCount( Datre );
+        Family.countFamily( Datre );
 
-        children.add( new Human( "Milena", "D'Atre", 2019 ) );
+        Family.addChild(child3, children);
         System.out.println( "After Milena:" );
-        Datre.familyCount( Datre );
+        System.out.println(Family.countFamily( Datre ));;
 
         System.out.println( "Years passed..." );
-        Datre.deleteChild( child1, children );
-        Datre.familyCount( Datre );
+        Family.deleteChild( child1, children );
+        Family.countFamily( Datre );
         Datre.finalize();
 
     }

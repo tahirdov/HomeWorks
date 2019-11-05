@@ -1,6 +1,5 @@
 package Homework6;
 
-import java.util.ArrayList;
 
 public class Human {
     private String name;
@@ -29,7 +28,7 @@ public class Human {
         this.year = year;
     }
 
-    private Human() {
+    Human() {
         super();
 
     }
